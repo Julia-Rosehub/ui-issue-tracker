@@ -16,7 +16,7 @@
 		"#dev-all": "Dev mode: watch for server changes and start UI server",
 		"dev-all": "rm dist/* && npm run watch-server-hmr & sleep 5 && npm start",
 		"build": "webpack",
-		"heroku-postbuild": "npm run build  && ln -sf ../node_modules/bootstrap/dist public/bootstrap"
+		"heroku-postbuild": "npm run compile && ln -sf ../node_modules/bootstrap/dist public/bootstrap"
 	},
 	"dependencies": {
 		"babel-polyfill": "^6.26.0",
@@ -38,7 +38,10 @@
 		"source-map-support": "^0.5.19",
 		"url-search-params": "^1.1.0",
 		"webpack": "^4.46.0",
-		"webpack-merge": "^5.7.3"
+		"webpack-merge": "^5.7.3",
+		"webpack-dev-middleware": "^3.5.0",
+		"webpack-hot-middleware": "^2.24.3",
+		"webpack-node-externals": "^1.7.2"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.2.3",
@@ -51,9 +54,6 @@
 		"eslint-plugin-import": "^2.14.0",
 		"eslint-plugin-jsx-a11y": "^6.1.2",
 		"eslint-plugin-react": "^7.12.3",
-		"webpack-cli": "^3.2.1",
-		"webpack-dev-middleware": "^3.5.0",
-		"webpack-hot-middleware": "^2.24.3",
-		"webpack-node-externals": "^1.7.2"
+		"webpack-cli": "^3.2.1"
 	}
 }
